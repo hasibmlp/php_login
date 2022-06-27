@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(237, 232, 232);
+}
+
+nav {
+    height: 100px;
+    width: 100%;
+    background-color: #fff;
+}
+
+ul {
+    margin-left: 60px;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    float:left;
+    line-height:100px;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Arial;
+    color:#1e1e1e;
+    padding: 0 20px;
+}
+
+ul li a:hover {
+    color: red;
+}
+
+.singup-form-form {
+    display: block;
+}
