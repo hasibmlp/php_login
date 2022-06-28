@@ -2,4 +2,5 @@
         <h1>Home page</h1>
 
 
+
 <?php include_once 'inc/footer.php' ?>
