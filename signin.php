@@ -10,7 +10,7 @@
                <input style= "padding: 5px" type="text" name="email" placeholder="Enter your email">
                <input style= "padding: 5px" type="text" name="uid" placeholder="Enter your username">
                <input style= "padding: 5px" type="password" name="pass" placeholder="Enter your password">
-               <input style= "padding: 5px" type="password" name="pass_re" placeholder="Re-enter password">
+               <input style= "padding: 5px" type="password" name="pass_rep" placeholder="Re-enter password">
                <button style= "padding: 5px" type="submit" name="submit">Submit</button>
    
            </form>

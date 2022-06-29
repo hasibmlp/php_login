@@ -19,7 +19,7 @@
                 <li><a href="index.php">Home1</a></li>
                 <li><a href="signin.php">Signup</a></li>
                 <li><a href="login.php">Login</a></li>
-                <li><a href="profile.php">Profile</a></li>
+                <li><a href="about.php">About</a></li>
              </ul>
         </nav>
     </section>
