@@ -33,7 +33,7 @@
             echo '<h4>Something went wrong, try again..</h4';
 
         }   else if ($_GET['error'] === 'none') {
-            echo '<h4>Created successully</h4';
+            echo '<h4>Created successully.</h4';
         }
     }
     ?>
