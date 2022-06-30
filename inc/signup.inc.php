@@ -26,11 +26,21 @@ if (invalidEmail($email) !== false) {
     header('location: ../signin.php?error=invalidEmail');
     exit();
 }
-
-// createUser($conn, $name, $email, $username, $pass, $passRep);
-
-}else {
-    header('location: ../signin.php');
+if (passMatch($pass, $passRep) !== false) {
+    header('location: ../signin.php?error=passnotmatch');
     exit();
 }
-`
+if (uidExists($conn, $username, $email) !== false) {
+    header('location: ../signin.php?error=usernameexists');
+    exit();
+}
+
+
+
+createUser($conn, $name, $email, $username, $pass, $passRep);
+
+// }else {
+//     header('location: ../signin.php');
+//     exit();
+}
+// `
