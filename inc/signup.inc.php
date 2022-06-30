@@ -27,15 +27,6 @@ if (invalidEmail($email) !== false) {
     exit();
 }
 
-// if (passMatch($pass, $passRep) !== false) {
-//     header('location: ../signin.php?passNotMatch');
-//     exit();
-// }
-// if (uidExists($conn, $username, $email) !== false) {
-//     header('location: ../signin.php?usernameTaken');
-//     exit();
-// }
-
 // createUser($conn, $name, $email, $username, $pass, $passRep);
 
 }else {
