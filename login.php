@@ -2,17 +2,33 @@
 
 <section class="">
     <h1>login</h1>
-    <div class="">
-        <center>
+    <center>
+    <div style="width: 300px" >
            
-           <form style="width: 200px" action="inc/login.inc.php" method="POST">
-               <input style= "padding: 5px" type="text" name="uid" placeholder="Username/Email">
-               <input style= "padding: 5px" type="password" name="pass" placeholder="Enter your password">
-               <button style= "padding: 5px" type="submit" name="submit">Submit</button>
+           <form action="inc/login.inc.php" method="POST">
+               <input  type="text" name="uid" placeholder="Username/Email">
+               <input  type="password" name="pass" placeholder="Enter your password">
+               <button  type="submit" name="submit">Submit</button>
    
            </form>
-       </center> 
-    </div>
+        </div>
+
+            <div>
+        <?php 
+        if (isset($_GET['error'])) {
+            if ($_GET['error'] === 'emptylogin') {
+                echo '<h4>Fill Form</h4>';
+            }
+            if ($_GET['error'] === 'wronglogin') {
+                echo '<h4>Please enter valid username/email</h4>';
+            }
+            if ($_GET['error'] === 'wrongPass') {
+                echo '<h4>Wrong Password</h4>';
+            }
+        }
+        
+        ?>
+
 </section>
 
 <?php include_once 'inc/footer.php' ?>

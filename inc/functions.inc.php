@@ -80,10 +80,46 @@ function uidExists($conn, $username, $email) {
             header('location: ../signin.php?error=stmtfiled');
             exit();
         }
-    $hasedPass = password_hash($userPass, PASSWORD_DEFAULT);
+    $hasedPass = password_hash($pass, PASSWORD_DEFAULT);
 
     mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hasedPass);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header('location: ../signin.php?error=none');
+}
+function emptyInputLogin($username, $pass)  {
+    $result;
+    if (empty($username) || empty($pass)) {
+        $result = true;
+    }else {
+        $result = false;
+    }
+    return $result;
+
+}
+function loginUser($conn, $username, $pass) {
+    $userExists = uidExists($conn, $username, $username);
+    if ($userExists === false) {
+        header('location: ../signin.php?error=wronglogin');
+        exit();
+        
+
+    }
+    
+    $passHashed = $userExists["userPass"];
+    $checkPass = password_verify($pass, $passHashed);
+    
+
+    
+    if($checkPass === false) {
+        header('location: ../login.php?error=wrongPass');
+        exit();
+    }else if($checkPass === true) {
+        session_start();
+        $_SESSION['userId'] = $userExists['userId'];
+        $_SESSION['userUid'] = $userExists['userUid'];
+        header("location: ../index.php");
+        exit();
+        
+    }
 }
